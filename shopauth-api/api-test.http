@@ -1,0 +1,43 @@
+### Created a new user
+POST http://localhost:3000/api/auth/register HTTP/1.1
+Content-Type: application/json
+x-api-key: mysecretkey
+
+{
+  "name": "Juan Pérez",
+  "email": "juan@email.com",
+  "password": "123456"
+}
+
+### Login with the created user
+POST http://localhost:3000/api/auth/login HTTP/1.1
+Content-Type: application/json
+x-api-key: mysecretkey
+
+{
+  "email": "admin@shop.com",
+  "password": "123456"
+}
+
+### Profile with token
+GET http://localhost:3000/api/auth/me HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjBlYjgwOTQ1Y2U4ZDEwYjVlMmVjZSIsImlhdCI6MTc3NzM5NzI3NywiZXhwIjoxNzc4MDAyMDc3fQ.tkBnGY3y2ooTvpMutUE7P_q9qVlwhowkd8tpjOgXj6M
+
+### Get all prodcuts 
+GET http://localhost:3000/api/products HTTP/1.1
+Content-Type: application/json
+x-api-key: mysecretkey
+
+### Create a new product
+POST http://localhost:3000/api/products HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjNhYjBkMjlkM2U2YmRjNGI3MzdiYiIsImlhdCI6MTc3NzU3Njg2NiwiZXhwIjoxNzc4MTgxNjY2fQ.KkiPfFKViyeFcK-pzr7tIUmWfgvxs3EYqlBci6YZRkU
+
+{
+  "name": "Iphone 17 Pro",
+  "description": "Celular profesional con chip M7 para rendimiento excepcional, pantalla OLED de 6.7 pulgadas, cámara de 48 MP con zoom óptico, batería de larga duración y diseño resistente al agua.",
+  "price": 999.99,
+  "category": "Electrónica",
+  "stock": 50
+}
